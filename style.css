@@ -34,6 +34,7 @@ body main section article {
   background-color: #52e185;
   font-size: 600%;
   display: flex;
+
   justify-content: center;
   align-items: center;
   cursor: pointer;
