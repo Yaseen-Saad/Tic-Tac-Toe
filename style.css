@@ -32,7 +32,7 @@ body main section {
 }
 body main section article {
   background-color: #52e185;
-  font-size: 300px;
+  font-size: 600%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,4 +85,4 @@ body main section article {
   100% {
     transform: translateX(0);
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

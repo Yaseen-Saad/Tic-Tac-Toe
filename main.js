@@ -1,19 +1,19 @@
 let cells = document.querySelectorAll("body main section article"),
   turn = "X",
-  turnP = document.querySelector("p");
-
+  turnP = document.querySelector("p"),
+  win = false;
 for (let i = 0; i < cells.length; i++) {
   let cel = cells[i];
   cel.onclick = (e) => {
-    if (e.target.innerHTML === "" && turn == "X") {
+    if (!win && e.target.innerHTML === "" && turn == "X") {
       e.target.innerHTML = "X";
       turn = "O";
       turnP.innerText = "Its O Turn";
-    } else if (e.target.innerHTML === "" && turn == "O") {
+    } else if (!win && e.target.innerHTML === "" && turn == "O") {
       e.target.innerHTML = "O";
       turn = "X";
       turnP.innerText = "Its X Turn";
-    } else {
+    } else if (!win) {
       cel.classList.add("shake");
       setTimeout(() => {
         cel.classList.remove("shake");
@@ -46,6 +46,7 @@ for (let i = 0; i < cells.length; i++) {
         cells[6].innerHTML == "X")
     ) {
       turnP.innerText = "X Wins :)";
+      win = true;
     }
     if (
       (cells[0].innerHTML == "O" &&
@@ -74,6 +75,22 @@ for (let i = 0; i < cells.length; i++) {
         cells[6].innerHTML == "O")
     ) {
       turnP.innerText = "O Wins :)";
+      win = true;
+    }
+    if (
+      cells[2].innerHTML == "O" &&
+      cells[4].innerHTML == "O" &&
+      cells[7].innerHTML == "O"
+    ) {
+      turnP.innerText = "O Wins واسطة :)";
+      win = true;
+    } else if (
+      cells[2].innerHTML == "X" &&
+      cells[4].innerHTML == "X" &&
+      cells[7].innerHTML == "X"
+    ) {
+      turnP.innerText = "X Wins واسطة :)";
+      win = true;
     }
   };
 }
