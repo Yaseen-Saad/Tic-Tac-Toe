@@ -79,16 +79,22 @@ for (let i = 0; i < cells.length; i++) {
       turnP.innerText = "O Wins :)";
       win = true;
     } else if (
-      cells[2].innerHTML == "O" &&
-      cells[4].innerHTML == "O" &&
-      cells[7].innerHTML == "O"
+      (cells[2].innerHTML == "O" &&
+        cells[4].innerHTML == "O" &&
+        cells[7].innerHTML == "O") ||
+      (cells[0].innerHTML == "O" &&
+        cells[4].innerHTML == "O" &&
+        cells[7].innerHTML == "O")
     ) {
       turnP.innerText = "O Wins واسطة :)";
       win = true;
     } else if (
-      cells[2].innerHTML == "X" &&
-      cells[4].innerHTML == "X" &&
-      cells[7].innerHTML == "X"
+      (cells[2].innerHTML == "X" &&
+        cells[4].innerHTML == "X" &&
+        cells[7].innerHTML == "X") ||
+      (cells[0].innerHTML == "X" &&
+        cells[4].innerHTML == "X" &&
+        cells[7].innerHTML == "X")
     ) {
       turnP.innerText = "X Wins واسطة :)";
       win = true;
